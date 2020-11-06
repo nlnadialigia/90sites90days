@@ -5,7 +5,8 @@
 }
 
 body {
-	background-color: #5295F1;
+	background: rgb(25,130,219);
+	background: linear-gradient(164deg, rgba(25,130,219,1) 0%, rgba(18,160,209,0.865983893557423) 54%, rgba(0,212,255,1) 100%);
 	color: #fff;
 	font-family: 'Muli', sans-serif;
 	display: flex;
@@ -16,10 +17,10 @@ body {
 	margin: 0;
 }
 
-h3 {
+h1 {
 	color: #fff;
-	text-transform: uppercase;
 	letter-spacing: 1px;
+	font-size: 30px;
 }
 
 .container {
@@ -42,4 +43,6 @@ h3 {
 
 .circle.grow {
 	transform: scale(2);
+	background: rgb(25,130,219);
+	background: linear-gradient(164deg, rgba(25,130,219,1) 0%, rgba(18,160,209,0.865983893557423) 54%, rgba(0,212,255,1) 100%);
 }
