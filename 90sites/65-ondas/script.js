@@ -1,21 +1,32 @@
 const container = document.getElementById('container');
 const circlesArr = [];
+const soundsArr = [];
+const tracks = [
+	'/sounds/1.wav',
+	'/sounds/2.wav'
+]
 let rows = 15;
 let cols = 15;
 
 for(let i=0; i<cols; i++) {
 	circlesArr[i] = [];
+	soundsArr[i] = []
 	for(let j=0; j<rows; j++) {
 		const circle = document.createElement('div');
 		circle.classList.add('circle');
 		container.appendChild(circle);
 		circlesArr[i].push(circle);	
+		const sound = document.createElement('audio');
+		sound.classList.add('sound')
+		circle.appendChild(sound)
+		soundsArr[i].push(sound)
 	}
 }
 
 circlesArr.forEach((cols, i) => {
 	cols.forEach((circle, j) => {
 		circle.addEventListener('click', () => {
+			playAudio()
 			growCircles(i, j);
 		});
 	});
@@ -34,7 +45,17 @@ function growCircles(i, j) {
 			
 			setTimeout(() => {
 				circlesArr[i][j].classList.remove('grow');
-			}, 300);
+			}, 500);
 		}
 	}
+}
+
+function playAudio() {
+	const audio = document.querySelector('.sound')
+	let track = tracks[Math.floor(Math.random() * tracks.length)];
+
+	setTimeout(() => {
+		audio.src = track;
+		audio.play()
+	}, 0)
 }
