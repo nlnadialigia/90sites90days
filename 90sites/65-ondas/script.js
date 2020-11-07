@@ -55,18 +55,19 @@ circlesArr.forEach((cols, i) => {
 	cols.forEach((circle, j) => {
 		circle.addEventListener('click', () => {
 			playAudio()
-			growCircles(i, j);
-						
+			growCircles(i, j);			
 		});
 	});
 });
 
 function growCircles(i, j) {
-	const bgColor = document.querySelectorAll('.circle')		
+	
 	if(circlesArr[i] && circlesArr[i][j]) {
 		if(!circlesArr[i][j].classList.contains('grow')) {
 			circlesArr[i][j].classList.add('grow');
-			pickedColor = dynamicColors()			
+			const bgColor = document.querySelectorAll('.grow')		
+			pickedColor = dynamicColors()	
+			console.log(pickedColor);		
 			bgColor.forEach(color => {				
 				color.style.backgroundColor = pickedColor
 			});
@@ -94,12 +95,16 @@ function playAudio() {
 		audio.src = track;
 		audio.play()
 	}, 0)
+
+	setTimeout(() => {
+		audio.pause()
+	}, 3550);
 }
 
 function dynamicColors() {
 	let r = Math.floor(Math.random() * 255);
 	let g = Math.floor(Math.random() * 255);
 	let b = Math.floor(Math.random() * 255);
-	let color = `rgb(${r}, ${g}, ${b})`
+	let color = `rgb(${r},${g},${b})`
 	return color;
 }
