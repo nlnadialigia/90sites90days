@@ -1,6 +1,5 @@
 <p align="center">
   <img src="assets/logo.png" width="300">
-
 </p>
 
 <p align="center">
@@ -16,6 +15,11 @@
 ---
 
 ## [Ondas](https://ondas-space-squad.netlify.app/)
+
+<p align="center">
+  <img src="assets/wave.gif" width="300">
+</p>
+
 
 Site baseado no [site 65 - Ondas](https://www.dorlyneto.com/90sites/65-ondas) do desafio de fazer 90 sites em 90 dias desenvolvido por [Dorly Neto](https://github.com/dorlyneto).
 
