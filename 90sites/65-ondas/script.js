@@ -66,8 +66,7 @@ function growCircles(i, j) {
 		if(!circlesArr[i][j].classList.contains('grow')) {
 			circlesArr[i][j].classList.add('grow');
 			const bgColor = document.querySelectorAll('.grow')		
-			pickedColor = dynamicColors()	
-			console.log(pickedColor);		
+			pickedColor = dynamicColors()
 			bgColor.forEach(color => {				
 				color.style.backgroundColor = pickedColor
 			});
