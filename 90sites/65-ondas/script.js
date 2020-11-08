@@ -64,5 +64,5 @@ function playAudio() {
 
 	setTimeout(() => {
 		audio.pause()
-	}, 3550)
+	}, 3560)
 }
