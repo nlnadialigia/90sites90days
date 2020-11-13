@@ -6,6 +6,7 @@ const tracks = [
 	'/sounds/waves-sound-2.mp3',
 	'/sounds/waves-sound-3.mp3'
 ]
+
 let rows = 15;
 let cols = 15;
 
@@ -26,12 +27,22 @@ for (let i = 0; i < cols; i++) {
 	}
 }
 
+const title = document.getElementsByTagName('h1')
+const audio = document.querySelector('.sound')
+let track = tracks[Math.floor(Math.random() * tracks.length)];
+audio.src = track;
+
 circlesArr.forEach((cols, i) => {
 	cols.forEach((circle, j) => {
 		circle.addEventListener('click', () => {
-			playAudio()
+			audio.play()
+			title[0].innerText = '⏸ Clique duas vezes para pausar...'
 			growCircles(i, j);
 		});
+		circle.addEventListener('dblclick', () =>  {
+			audio.pause()
+			title[0].innerText = '🌊 Clique uma vez em alguma bolinha...'
+		})
 	});
 });
 
@@ -53,16 +64,3 @@ function growCircles(i, j) {
 	}
 }
 
-function playAudio() {
-	const audio = document.querySelector('.sound')
-	let track = tracks[Math.floor(Math.random() * tracks.length)];
-
-	setTimeout(() => {
-		audio.src = track;
-		audio.play()
-	}, 0)
-
-	setTimeout(() => {
-		audio.pause()
-	}, 3560)
-}
